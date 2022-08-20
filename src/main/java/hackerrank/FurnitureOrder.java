@@ -49,11 +49,8 @@ public class FurnitureOrder implements FurnitureOrderInterface {
     public float getTypeCost(Furniture type) {
         float cost = 0;
         if (type != null) {
-            Integer count = orderMap.get(type);
-            Furniture[] values = type.values();
-            for (Furniture furniture : values) {
-                cost +=furniture.cost() ;
-            }
+            Integer integer = orderMap.get(type);
+            return type.cost() * integer;
         }
         return cost;
 
